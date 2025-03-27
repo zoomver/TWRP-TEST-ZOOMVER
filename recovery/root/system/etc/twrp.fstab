@@ -87,12 +87,6 @@ product /product                    ext4      ro,barrier=1 wait,logical,first_st
 /cache                           emmc   /dev/block/by-name/cache    ro,barrier=1    wait,slotselect
 /metadata                        ext4   /dev/block/by-name/metadata      ro,barrier=1    wait,slotselect
 
-#Full Dump.
-/mmcblk          emmc   /dev/block/mmcblk               flags=display="Full_Dump1";backup=1;flashimg=1;slotselect
-/mmcblk          ext4   /dev/block/mmcblk               flags=display="Full_Dump2";backup=1;flashimg=1;slotselect
-/mmcblk          erofs   /dev/block/mmcblk               flags=display="Full_Dump3";backup=1;flashimg=1;slotselect
-/mmcblk          f2fs   /dev/block/mmcblk               flags=display="Full_Dump4";backup=1;flashimg=1;slotselect
-
 # Removable storage.
 /external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
 #/usb-otg	       auto	/dev/block/sda1	       	/dev/block/sda				  flags=storage;wipeingui;removable
