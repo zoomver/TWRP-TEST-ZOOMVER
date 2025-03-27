@@ -39,26 +39,27 @@
 /vendor_boot                      emmc     /dev/block/by-name/vendor_boot         flags=display="vendor_boot";backup=1;flashimg=1;slotselect
 
 #Cache.
-/cache                                     emmc    /dev/block/by-name/cache                     flags=display="cache";backup=1;flashimg=1;slotselect
+/cache                                     emmc    /dev/block/by-name/cache                     flags=display="cache";backup=1;flashimg=1;wipeingui;slotselect
 
 #Vendor.
 /mnt/vendor/socko_image              ext4     /dev/block/by-name/socko                 	flags=display="socko";backup=1;slotselect;flashimg=1
 /mnt/vendor/socko                           ext4    /dev/block/by-name/socko      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
-/mnt/vendor/odmko_image         	ext4     /dev/block/by-name/odmko                 	flags=display="odmko Image";backup=1;slotselect;flashimg=1
+/mnt/vendor/odmko         	emmc     /dev/block/by-name/odmko                 	flags=display="odmko";backup=1;slotselect;flashimg=1
 /mnt/vendor/odmko                          ext4    /dev/block/by-name/odmko      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
 /mnt/vendor_image       	             emmc    /dev/block/by-name/prodnv       	        	flags=display="prodnv";backup=1;slotselect;flashimg=1
 /mnt/vendor                                        ext4   /dev/block/by-name/prodnv        noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check
 
 #ZTE Config.
-/ztecfg                                              ext4    /deb/block/by-name/ztecfg                       flags=display="ztecfg";backup=1;flashimg=1;slotselect
-/ztecfg                                               ext4    /deb/block/mmcblk0p26                           flags=display="ztecfg_blk";backup=1;flashimg=1;slotselect
+/ztecfg                                              erofs    /deb/block/by-name/ztecfg                       flags=display="ztecfg1";backup=1;flashimg=1;slotselect
+/ztecfg                                              emmc    /deb/block/by-name/ztecfg                       flags=display="ztecfg2";backup=1;flashimg=1;slotselect
+/ztecfg                                              ext4    /deb/block/by-name/ztecfg                       flags=display="ztecfg3";backup=1;flashimg=1;slotselect
 /ztepersist                                         emmc   /dev/block/by-name/ztepersist                  flags=display="ztepersist";backup=1;flashimg=1;slotselect
 /mnt/vendor/persist                          ext4      /dev/block/by-name/ztepersist    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc   wait,check,slotselect,formattable
 
 #Security.
 /tos                                       emmc    /dev/block/by-name/trustos                 	flags=display="trustos";backup=1;flashimg=1;slotselect
 /teecfg                                  emmc    /dev/block/by-name/teecfg                  	flags=display="teecfg";backup=1;flashimg=1;slotselect
-/metadata                       		ext4    /dev/block/by-name/metadata               	flags=display="metadata";backup=1;wipeingui;flashimg=1;slotselect
+/metadata                       		emmc    /dev/block/by-name/metadata               	flags=display="metadata";backup=1;wipeingui;flashimg=1;slotselect
 /metadata                               ext4   /dev/block/by-name/metadata      nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
 
 #DT.
@@ -71,27 +72,26 @@
 /sysdumpdb                        emmc    /dev/block/by-name/sysdumpdb             flags=display="sysdumpdb";backup=1;flashimg=1;slotselect
 
 #Folder mounts (root)+Super+Dynamic partition.
-#system /system                    ext4      ro,barrier=1 wait,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,slotselect
-#system_ext /system_ext       ext4      ro,barrier=1 wait,logical,first_stage_mount,slotselect
-#vendor /vendor                       ext4      ro,barrier=1 wait,logical,first_stage_mount,slotselect
-#product /product                    ext4     ro,barrier=1 wait,logical,first_stage_mount,slotselect
-/system_image	    	emmc  	 /dev/block/mapper/system			        flags=backup=1;flashimg=1;display="System Image"
-/system_ext_image	    emmc     /dev/block/mapper/system_ext             flags=backup=1;flashimg=1;display="System_Ext Image"
-/vendor_image	    	emmc     /dev/block/mapper/vendor			        flags=backup=1;flashimg=1;display="Vendor Image"
-/product_image	    	emmc     /dev/block/mapper/product			    flags=backup=1;flashimg=1;display="Product Image"
-/super                  emmc     /dev/block/by-name/super                   flags=backup=1;flashimg=1;display="Super Image"
-/vendor                           ext4       /dev/block/mapper/vendor                         flags=display="vendor_only";backup=1;wipeingui
-/product                          ext4       /dev/block/mapper/product                  flags=display="product_only";backup=1;wipeingui
-/system                           ext4      /dev/block/mapper/system                         flags=display="system_only";backup=1;wipeingui
-/system_ext                    ext4       /dev/block/mapper/system_ext                 flags=display="system_ext_only";backup=1;wipeingui
+system /system                     ext4      ro,barrier=1 wait,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,slotselect
+system_ext /system_ext       ext4      ro,barrier=1 wait,logical,first_stage_mount,slotselect
+vendor /vendor                       ext4      ro,barrier=1 wait,logical,first_stage_mount,slotselect
+product /product                    ext4      ro,barrier=1 wait,logical,first_stage_mount,slotselect
+/vendor                           emmc       /dev/block/mapper/vendor                         flags=display="vendor only";backup=1;flashimg=1;wipeingui;slotselect
+/product                          emmc       /dev/block/mapper/product                  flags=display="product only";backup=1;flashimg=1;wipeingui;slotselect
+/system                           emmc       /dev/block/mapper/system                         flags=display="system only";backup=1;flashimg=1;wipeingui;slotselect
+/system_ext                    emmc       /dev/block/mapper/system_ext                 flags=display="system_ext only";backup=1;flashimg=1;wipeingui;slotselect
 /system_root               ext4    /dev/block/by-name/system    ro,barrier=1    wait,slotselect
 /vendor                         ext4    /dev/block/by-name/vendor   ro,barrier=1    wait,slotselect
 /mnt/vendor                 ext4    /dev/block/by-name/prodnv   noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
 /mnt                               ext4    /dev/block/by-name/mnt        ro,barrier=1    wait,slotselect
-/cache                           ext4    /dev/block/by-name/cache    ro,barrier=1    wait,slotselect
+/cache                           emmc   /dev/block/by-name/cache    ro,barrier=1    wait,slotselect
+/metadata                        ext4   /dev/block/by-name/metadata      ro,barrier=1    wait,slotselect
 
 #Full Dump.
-/mmcblk_image          emmc   /dev/block/mmcblk               flags=display="Full_Dump Image";backup=1;flashimg=1;slotselect
+/mmcblk          emmc   /dev/block/mmcblk               flags=display="Full_Dump1";backup=1;flashimg=1;slotselect
+/mmcblk          ext4   /dev/block/mmcblk               flags=display="Full_Dump2";backup=1;flashimg=1;slotselect
+/mmcblk          erofs   /dev/block/mmcblk               flags=display="Full_Dump3";backup=1;flashimg=1;slotselect
+/mmcblk          f2fs   /dev/block/mmcblk               flags=display="Full_Dump4";backup=1;flashimg=1;slotselect
 
 # Removable storage.
 /external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
