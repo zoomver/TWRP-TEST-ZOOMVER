@@ -23,3 +23,4 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 13. Добавил в recovery/root, файл ztecharger.
 14. Добавил в system/etc, папку init/hw и файл init.rc.
 15. Добавил в system/etc, файл uneventd.rc
+16. Отредактировал twrp.fstab
