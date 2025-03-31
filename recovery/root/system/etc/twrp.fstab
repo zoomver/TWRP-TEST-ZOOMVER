@@ -1,4 +1,6 @@
 #TWRP FSTAB FILES for ZTE BLADE A31 (RU)
+#Kernel version: 4.193+
+#Core bit depth: 32 bit
 
 #FirsBoot.            
 /spl                                emmc     /dev/block/mmcblk0boot0                                                                      
@@ -51,16 +53,17 @@
 
 #ZTE Config.
 /ztecfg                                              erofs    /deb/block/by-name/ztecfg                       flags=display="ztecfg1";backup=1;flashimg=1;slotselect
-/ztecfg                                              emmc    /deb/block/by-name/ztecfg                       flags=display="ztecfg2";backup=1;flashimg=1;slotselect
 /ztecfg                                              ext4    /deb/block/by-name/ztecfg                       flags=display="ztecfg3";backup=1;flashimg=1;slotselect
+/ztecfg                                              ext4   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/ztecfg      flags=display="ztecfg4";backup=1;flashimg=1;slotselect
 /ztepersist                                         emmc   /dev/block/by-name/ztepersist                  flags=display="ztepersist";backup=1;flashimg=1;slotselect
 /mnt/vendor/persist                          ext4      /dev/block/by-name/ztepersist    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc   wait,check,slotselect,formattable
 
 #Security.
 /tos                                       emmc    /dev/block/by-name/trustos                 	flags=display="trustos";backup=1;flashimg=1;slotselect
 /teecfg                                  emmc    /dev/block/by-name/teecfg                  	flags=display="teecfg";backup=1;flashimg=1;slotselect
-/metadata                       		emmc    /dev/block/by-name/metadata               	flags=display="metadata";backup=1;wipeingui;flashimg=1;slotselect
-/metadata                               ext4   /dev/block/by-name/metadata      nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
+/metadata                       		emmc    /dev/block/by-name/metadata               	flags=display="metadata1";backup=1;wipeingui;flashimg=1;slotselect
+/metadata                       		ext4    /dev/block/by-name/metadata               	flags=display="metadata2";backup=1;wipeingui;flashimg=1;slotselect
+#/metadata                               ext4   /dev/block/by-name/metadata      nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
 
 #DT.
 /dtb                              emmc   /dev/block/by-name/dtb                          flags=display="dtb";backup=1;flashimg=1;slotselect
