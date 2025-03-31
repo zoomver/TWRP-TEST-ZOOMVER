@@ -21,3 +21,5 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 11. Тестовая сборка в купе со снятием шифрования (редактировал fstab vendor) заработала.
 12. Добавил в system/etc, стоковый файл ld.config.txt
 13. Добавил в recovery/root, файл ztecharger.
+14. Добавил в system/etc, папку init/hw и файл init.rc.
+15. Добавил в system/etc, файл uneventd.rc
