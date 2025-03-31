@@ -20,3 +20,4 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 10. Сделал тестовую сборку.
 11. Тестовая сборка в купе со снятием шифрования (редактировал fstab vendor) заработала.
 12. Добавил в system/etc, стоковый файл ld.config.txt
+13. Добавил в recovery/root, файл ztecharger.
