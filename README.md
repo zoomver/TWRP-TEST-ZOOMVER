@@ -18,10 +18,5 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 8. Сделал тестовую сборку.
 9. Отредактировал twrp.fstab
 10. Сделал тестовую сборку.
-11. Тестовая сборка в купе со снятием шифрования (редактировал fstab vendor) заработала. Необходимо править пути монтирования Data, sdcard, cache,odmko, ztepersist, metadata, Убрать super+,дубликат Data, cache.
-12. Отредактировал флаги в BoardConfig:
-TW_INTERNAL_STORAGE_PATH := "/storage/emulated/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "/storage"
-TW_EXTERNAL_STORAGE_PATH := "/storage/sdcard0"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "/storage"
-13.  
+11. Тестовая сборка в купе со снятием шифрования (редактировал fstab vendor) заработала.
+12. Добавил в system/etc, стоковый файл ld.config.txt
