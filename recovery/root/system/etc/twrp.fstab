@@ -8,6 +8,7 @@
 
 #Userdata. 
 /data                                 f2fs     /dev/block/by-name/userdata                  flags=display="userdata";backup=1;wipeingui;flashimg=1;slotselect;encryptable=footer;formattable
+/data                                 f2fs     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/userdata   flags=display="userdata";backup=1;wipeingui;flashimg=1;slotselect;encryptable=footer;formattable
 
 #Modem.
 /ltemodem                     emmc     /dev/block/by-name/l_modem                    	flags=display="modem_lte";backup=1;slotselect
@@ -52,18 +53,14 @@
 /mnt/vendor                                        ext4   /dev/block/by-name/prodnv        noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check
 
 #ZTE Config.
-/ztecfg                                              erofs    /deb/block/by-name/ztecfg                       flags=display="ztecfg1";backup=1;flashimg=1;slotselect
-/ztecfg                                              ext4    /deb/block/by-name/ztecfg                       flags=display="ztecfg3";backup=1;flashimg=1;slotselect
-/ztecfg                                              ext4   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/ztecfg      flags=display="ztecfg4";backup=1;flashimg=1;slotselect
+/ztecfg                                              emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/ztecfg      flags=display="ztecfg";backup=1;flashimg=1;slotselect
 /ztepersist                                         emmc   /dev/block/by-name/ztepersist                  flags=display="ztepersist";backup=1;flashimg=1;slotselect
 /mnt/vendor/persist                          ext4      /dev/block/by-name/ztepersist    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc   wait,check,slotselect,formattable
 
 #Security.
 /tos                                       emmc    /dev/block/by-name/trustos                 	flags=display="trustos";backup=1;flashimg=1;slotselect
 /teecfg                                  emmc    /dev/block/by-name/teecfg                  	flags=display="teecfg";backup=1;flashimg=1;slotselect
-/metadata                       		emmc    /dev/block/by-name/metadata               	flags=display="metadata1";backup=1;wipeingui;flashimg=1;slotselect
-/metadata                       		ext4    /dev/block/by-name/metadata               	flags=display="metadata2";backup=1;wipeingui;flashimg=1;slotselect
-#/metadata                               ext4   /dev/block/by-name/metadata      nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
+/metadata                       		emmc    /dev/block/by-name/metadata               	flags=display="metadata";backup=1;wipeingui;flashimg=1;slotselect
 
 #DT.
 /dtb                              emmc   /dev/block/by-name/dtb                          flags=display="dtb";backup=1;flashimg=1;slotselect
@@ -87,8 +84,8 @@ product /product                    ext4      ro,barrier=1 wait,logical,first_st
 /vendor                         ext4    /dev/block/by-name/vendor   ro,barrier=1    wait,slotselect
 /mnt/vendor                 ext4    /dev/block/by-name/prodnv   noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
 /mnt                               ext4    /dev/block/by-name/mnt        ro,barrier=1    wait,slotselect
-/cache                           emmc   /dev/block/by-name/cache    ro,barrier=1    wait,slotselect
-/metadata                        ext4   /dev/block/by-name/metadata      ro,barrier=1    wait,slotselect
+/cache                           emmc   /dev/block/by-name/cache    ro 1 0
+/metadata                       emmc   /dev/block/by-name/metadata      ro 1 0
 
 # Removable storage.
 /external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
