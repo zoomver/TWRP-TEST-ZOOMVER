@@ -24,4 +24,5 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 15. Довёл до ума twrp.fstab (все необходимые блоки готовы для backup).
 16. Пересобрал twrp, необходимо тестировать создание backup и восстановление из него.
 17. Опробовал backup, есть пара моментов которые надо пересмотреть.
-Тестирование провожу в репозитории [GitHub Pages](https://github.com/zoomver/TWRP-TEST-ZOOMVER).
+18. Создал доп. репозиторий.
+Тестирование провожу в репозитории [GitHub Pages](https://github.com/zoomver/TWRP-TEST1-ZOOMVER).
