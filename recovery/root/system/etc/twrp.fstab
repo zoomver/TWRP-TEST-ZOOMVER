@@ -8,7 +8,7 @@
 /spl_bk                          emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/mmcblk0boot1
 
 #Userdata. 
-/data                                 f2fs     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/userdata                            flags=display="data";backup=1;flashimg=1;formattable;encryptable=footer;
+/data                                 f2fs     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/userdata                            flags=display="data";backup=1;flashimg=1;formattable;encryptable=footer
 
 #Modem.
 /ltemodem                     emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/l_modem                    	flags=display="modem_lte (8 blocks)";backup=1;flashimg=1;slotselect
