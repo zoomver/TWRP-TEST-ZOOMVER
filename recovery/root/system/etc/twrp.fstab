@@ -42,13 +42,13 @@
 /vendor_boot                      emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vendor_boot         flags=display="vendor_boot";backup=1;flashimg=1;slotselect
 
 #Cache.
-/cache                                     emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/cache                       flags=display="cache";backup=1;flashimg=1;wipeingui
+/cache                                     emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/cache                       flags=display="cache";backup=1;flashimg=1
 
 #Vendor.
 /socko                                        ext4     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/socko                  	flags=display="socko *"
 /socko                                        emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/socko                  	flags=display="socko";backup=1;slotselect;flashimg=1
-/odmko                               	emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/odmko                 	flags=display="odmko";backup=1;slotselect;flashimg=1
 /odmko                               	ext4     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/odmko                 	flags=display="odmko *"
+/odmko                               	emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/odmko                 	flags=display="odmko";backup=1;slotselect;flashimg=1
 /prodnv       	                          ext4   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv                 	flags=display="prodnv *"
 /prodnv       	                          emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv                 	flags=display="prodnv";backup=1;flashimg=1
 
@@ -86,10 +86,11 @@ vendor /vendor ext4 ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_moun
 product /product ext4 ro,barrier=1 wait,avb=vbmeta,logical,first_stage_mount,slotselect
 /product                          emmc       /dev/block/mapper/product                  flags=display="product only";backup=1;flashimg=1;wipeingui;slotselect
 
-#Folder mount
-/system_root               ext4    /dev/block/by-name/system    ro,barrier=1    wait,slotselect
-/                                     /mnt           ext4           flags=display="mnt *"
-/                                     /cache        ext4          flags=display="cache *"
+#Folder mount.
+/                  ext4            /mnt                     
+/                  ext4           /cache          flags=display="cache *";wipeingui
+/                   ext4          /metadata       flags=display="metadata *";wipeingui
+
 #Folder and block mount (stock info fstab).
 #mnt /mnt                                  ext4      nosuid,nodev,noatime,barrier=1 0 0
 #/dev/block/by-name/vendor                /vendor             ext4    ro,barrier=1    wait,slotselect
