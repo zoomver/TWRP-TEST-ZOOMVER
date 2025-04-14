@@ -87,9 +87,9 @@ product /product ext4 ro,barrier=1 wait,avb=vbmeta,logical,first_stage_mount,slo
 /product                          emmc       /dev/block/mapper/product                  flags=display="product only";backup=1;flashimg=1;wipeingui;slotselect
 
 #Folder mount.
-/                  ext4            /mnt                     
-/                  ext4           /cache          flags=display="cache *";wipeingui
-/                   ext4          /metadata       flags=display="metadata *";wipeingui
+#/                  ext4            /mnt                     
+#/                  ext4           /cache          flags=display="cache *";wipeingui
+#/                   ext4          /metadata       flags=display="metadata *";wipeingui
 
 #Folder and block mount (stock info fstab).
 #mnt /mnt                                  ext4      nosuid,nodev,noatime,barrier=1 0 0
