@@ -1,16 +1,16 @@
-#TWRP FSTAB FILES for ZTE BLADE A31 (RU)
-#Kernel version: 4.193+
-#Core bit depth: 32 bit
-#Attention: Do not activate lines marked with "#" for the ZTE Blade A31!!!
+# TWRP FSTAB FILES for ZTE BLADE A31 (RU)
+# Kernel version: 4.193+
+# Core bit depth: 32 bit
+# Attention: Do not activate lines marked with "#" for the ZTE Blade A31!!!
 
-#FirsBoot.            
+# FirsBoot.            
 /spl                                emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/mmcblk0boot0                                                                      
 /spl_bk                          emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/mmcblk0boot1
 
-#Userdata. 
+# Userdata. 
 /data                                 f2fs     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/userdata                            flags=display="data";backup=1;flashimg=1;formattable;encryptable=footer
 
-#Modem.
+# Modem.
 /ltemodem                     emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/l_modem                    	flags=display="modem_lte (8 blocks)";backup=1;flashimg=1;slotselect
 /ltedsp                            emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/l_ldsp                          	flags=backup=1;slotselect;backup=1;flashimg=1;subpartitionof=/ltemodem
 /ltegdsp                          emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/l_gdsp			                flags=backup=1;slotselect;backup=1;flashimg=1;subpartitionof=/ltemodem
@@ -26,14 +26,14 @@
 /miscdata                        emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/miscdata                      flags=display="miscdata";backup=1;flashimg=1
 /pmsys                             emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/pm_sys                  	flags=display="pm_sys";backup=1;flashimg=1;slotselect
 
-#Vbmeta.
+# Vbmeta.
 /vbmeta                             emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vbmeta                  	         flags=display="vbmeta";backup=1;flashimg=1;slotselect
 /vbmeta_system              emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vbmeta_system        	     flags=display="vbmeta_system";backup=1;flashimg=1;slotselect
 /vbmeta_vendor               emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vbmeta_vendor		           flags=display="vbmeta_vendor";backup=1;flashimg=1;slotselect
 /vbmeta_product              emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vbmeta_product		         flags=display="vbmeta_product";backup=1;flashimg=1;slotselect
 /vbmeta_system_ext        emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vbmeta_system_ext     	  flags=display="vbmeta_system_ext";backup=1;flashimg=1;slotselect
 
-#Boot.
+# Boot.
 /boot                                   emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/boot                  	flags=display="boot";backup=1;flashimg=1;slotselect
 /uboot                                 emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/uboot                     flags=display="uboot";backup=1;flashimg=1;slotselect           
 /uboot_log                          emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/uboot_log              flags=display="uboot_log";backup=1;flashimg=1
@@ -41,10 +41,10 @@
 /fbootlogo                           emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/fbootlogo              flags=display="fbootlogo";backup=1;flashimg=1
 /vendor_boot                      emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/vendor_boot         flags=display="vendor_boot";backup=1;flashimg=1;slotselect
 
-#Cache.
+# Cache.
 /cache                                     emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/cache                       flags=display="cache";backup=1;flashimg=1
 
-#Vendor.
+# Vendor.
 /socko                                        ext4     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/socko                  	flags=display="socko *"
 /socko                                        emmc     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/socko                  	flags=display="socko";backup=1;slotselect;flashimg=1
 /odmko                               	ext4     /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/odmko                 	flags=display="odmko *"
@@ -52,31 +52,31 @@
 /prodnv       	                          ext4   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv                 	flags=display="prodnv *"
 /prodnv       	                          emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv                 	flags=display="prodnv";backup=1;flashimg=1
 
-#Vendor (stock info fstab).
-#/mnt/vendor/socko               ext4     /dev/block/by-name/socko      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
-#/mnt/vendor/odmko              ext4    /dev/block/by-name/odmko      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
-#/vendor       	                          emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv                 	flags=display="prodnv";backup=1;flashimg=1
-#/mnt/vendor                             ext4   /dev/block/by-name/prodnv      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check
+# Vendor (stock info fstab).
+# /mnt/vendor/socko               ext4     /dev/block/by-name/socko      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+# /mnt/vendor/odmko              ext4    /dev/block/by-name/odmko      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+# /vendor       	                          emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv                 	flags=display="prodnv";backup=1;flashimg=1
+# /mnt/vendor                             ext4   /dev/block/by-name/prodnv      noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check
 
-#ZTE Config.
+# ZTE Config.
 /ztecfg                                      emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/ztecfg                         flags=display="ztecfg";backup=1;flashimg=1
 /ztepersist                                emmc  /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/ztepersist                  flags=display="ztepersist";backup=1;flashimg=1
 
-#Security.
+# Security.
 /tos                                       emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/trustos                 	flags=display="trustos";backup=1;flashimg=1;slotselect
 /teecfg                                 emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/teecfg                  	flags=display="teecfg";backup=1;flashimg=1;slotselect
 /metadata                        	emmc  /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/metadata               	flags=display="metadata";backup=1;flashimg=1;formattable
 
-#DT.
+# DT.
 /dtb                                      emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/dtb                          flags=display="dtb";backup=1;flashimg=1;slotselect
 /dtbo                                    emmc   /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/dtbo                    	flags=display="dtbo";backup=1;flashimg=1;slotselect
 
-#Other.
+# Other.
 /sml                                     emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/sml			                flags=display="sml";backup=1;flashimg=1;slotselect
 /persist                   	     	emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/persist              		flags=display="persist";backup=1;flashimg=1;slotselect
 /sysdumpdb                        emmc    /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/sysdumpdb             flags=display="sysdumpdb";backup=1;flashimg=1
 
-#Super and Dynamic partition only
+# Super and Dynamic partition only
 system /system ext4 ro,barrier=1 wait,avb=vbmeta_system,logical,first_stage_mount,slotselect
 /system                           emmc       /dev/block/mapper/system                         flags=display="system only";backup=1;flashimg=1;wipeingui;slotselect
 system_ext /system_ext ext4 ro,barrier=1 wait,avb=vbmeta_system_ext,logical,first_stage_mount,slotselect
@@ -86,26 +86,26 @@ vendor /vendor ext4 ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_moun
 product /product ext4 ro,barrier=1 wait,avb=vbmeta,logical,first_stage_mount,slotselect
 /product                          emmc       /dev/block/mapper/product                  flags=display="product only";backup=1;flashimg=1;wipeingui;slotselect
 
-#Folder mount.
-#/                  ext4            /mnt                     
-#/                  ext4           /cache          flags=display="cache *";wipeingui
-#/                   ext4          /metadata       flags=display="metadata *";wipeingui
+# Folder mount.
+# /                  ext4            /mnt                     
+# /                  ext4           /cache          flags=display="cache *";wipeingui
+# /                   ext4          /metadata       flags=display="metadata *";wipeingui
 
-#Folder and block mount (stock info fstab).
-#mnt /mnt                                  ext4      nosuid,nodev,noatime,barrier=1 0 0
-#/dev/block/by-name/vendor                /vendor             ext4    ro,barrier=1    wait,slotselect
-#/dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
+# Folder and block mount (stock info fstab).
+# mnt /mnt                                  ext4      nosuid,nodev,noatime,barrier=1 0 0
+# /dev/block/by-name/vendor                /vendor             ext4    ro,barrier=1    wait,slotselect
+# /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
 
 
-#/dev/block/by-name/metadata /metadata    ext4 nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
+# /dev/block/by-name/metadata /metadata    ext4 nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
 
-#/dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
-#/dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+# /dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+# /dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
 
-#/dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
+# /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
 
-#/mnt/vendor/persist                ext4      /dev/block/by-name/ztepersist    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc   wait,check,slotselect,formattable
+# /mnt/vendor/persist                ext4      /dev/block/by-name/ztepersist    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc   wait,check,slotselect,formattable
 
 # Removable storage.
 /external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
-#/usb-otg	       auto	/dev/block/sda1	       	/dev/block/sda				  flags=storage;wipeingui;removable
+# /usb-otg	       auto	/dev/block/sda1	       	/dev/block/sda				  flags=storage;wipeingui;removable
