@@ -25,3 +25,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 16. Пересобрал twrp, необходимо тестировать создание backup и восстановление из него.
 17. Опробовал backup, есть пара моментов которые надо пересмотреть.
 18. Автоматически создаётся дериктория system_root. Открывается, но отказывается монтироваться.
+19. Изменил флаг:
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false на 
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true.
+Для монтажа system_root.
