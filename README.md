@@ -30,3 +30,6 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := false на
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true.
 Для монтажа system_root.
 С начала попробую собрать без этого флага.
+20. Пересобрал полностью без флага:
+ BOARD_BUILD_SYSTEM_ROOT_IMAGE.
+System_root монтируется без проблем.
