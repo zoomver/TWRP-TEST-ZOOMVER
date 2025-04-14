@@ -29,3 +29,4 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false на 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true.
 Для монтажа system_root.
+С начала попробую собрать без этого флага.
