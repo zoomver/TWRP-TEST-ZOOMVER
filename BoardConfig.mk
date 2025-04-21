@@ -12,21 +12,6 @@ ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-# A/B
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_system_ext \
-    vbmeta_product \
-    vbmeta_vendor \
-    dtbo \
-    boot \
-    system \
-    system_ext \
-    vendor \
-    product
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -47,20 +32,19 @@ TARGET_BOARD_PLATFORM := sp9863a
 
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
+BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 buildvariant=user
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_RAMDISK_OFFSET := 0x05400000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_IMAGE_NAME := kernel
+BOARD_RAMDISK_OFFSET := 0x05400000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-
+BOARD_KERNEL_IMAGE_NAME := kernel
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_CONFIG := P963F70_defconfig
+TARGET_KERNEL_SOURCE := kernel/zte/P963F70
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -83,7 +67,7 @@ TARGET_SCREEN_DENSITY := 320
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
-# BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+# BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
 # Partitions configs
 BOARD_USES_RECOVERY_AS_BOOT := true
@@ -103,6 +87,18 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_ROOT = root
+TARGET_COPY_OUT_SYSTEM := system
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_SYSTEM_EXT = system_ext
+TARGET_COPY_OUT_PRODUCT := system/product
+TARGET_COPY_OUT_VENDOR := system/vendor
+TARGET_COPY_OUT_SYSTEM_EXT = system/system_ext
+TARGET_COPY_OUT_ROOT = system_root/root
+TARGET_COPY_OUT_PRODUCT := system_root/product
+TARGET_COPY_OUT_VENDOR := system_root/vendor
+TARGET_COPY_OUT_SYSTEM_EXT = system_root/system_ext
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -113,11 +109,6 @@ BOARD_SUPER_PARTITION_GROUPS := zte_dynamic_partitions
 BOARD_ZTE_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
 BOARD_ZTE_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
-# Workaround for copying error vendor files to recovery ramdisk
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_SYSTEM_EXT = system_ext
-
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
@@ -127,18 +118,6 @@ PLATFORM_VERSION := 16.1.0
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
 TW_INCLUDE_FBE_METADATA_DECRYPT := false
-
-# MODULES
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libpuresoftkeymasterdevice \
-    ashmemd_aidl_interface-cpp \
-    libashmemd_client
-
-# LIBRARIES
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
