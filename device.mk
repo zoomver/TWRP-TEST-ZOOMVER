@@ -45,8 +45,8 @@ PRODUCT_PACKAGES += \
     bootctrl
 
 PRODUCT_PACKAGES += \
-    bootctrl.sp9863a \
-    bootctrl.sp9863a.recovery
+    bootctrl.$(PRODUCT_PLATFORM) \
+    bootctrl.$(PRODUCT_PLATFORM).recovery
 
 # The library is created by twrpdtgen, but is considered obsolete.
 # PRODUCT_STATIC_BOOT_CONTROL_HAL := \
@@ -61,10 +61,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
-PRODUCT_PACKAGES += \
-    bootctrl.$(PRODUCT_PLATFORM) \
-    bootctrl.$(PRODUCT_PLATFORM).recovery
 
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
