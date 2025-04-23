@@ -22,7 +22,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 OVERRIDE_TARGET_FLATTEN_APEX := true
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=true
 
-# Virtual A/B
+# A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
@@ -55,18 +55,10 @@ PRODUCT_PACKAGES += \
     libz \
     libcutils
 
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
-    update_engine_sideload
-
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # Fastbootd
-# PRODUCT_PACKAGES += fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery \
@@ -74,3 +66,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
+    update_engine \
+    update_verifier \
+    update_engine_sideload
