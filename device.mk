@@ -32,57 +32,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# A/B
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    boot \
-    cache \
-    dtb \
-    dtbo \
-    fbootlogo \
-    gpsbd \
-    gpsgl \
-    l_deltanv \
-    l_fixnv1 \
-    l_fixnv2 \
-    l_gdsp \
-    l_ldsp \
-    l_modem \
-    logo \
-    l_runtimenv1 \
-    l_runtimenv2 \
-    metadata \
-    miscdata \
-    misc \
-    mmcblk0boot0 \
-    mmcblk0boot1 \
-    odmko \
-    persist \
-    pm_sys \
-    prodnv \
-    sml \
-    socko \
-    super \
-    sysdumpdb \
-    teecfg \
-    trustos \
-    uboot \
-    uboot_log \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    vbmeta_product \
-    vbmeta_system_ext \
-    vendor_boot\
-    warmboot \
-    wcnmodem \
-    ztecfg \
-    ztepersist \
-    product \
-    system \
-    system_ext \
-    vendor
-
 # Health Hal
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
