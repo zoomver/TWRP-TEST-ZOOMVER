@@ -92,15 +92,6 @@ TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_SYSTEM_EXT = system_ext
-# TARGET_COPY_OUT_ROOT = system/root
-# TARGET_COPY_OUT_SYSTEM := system/system
-# TARGET_COPY_OUT_PRODUCT := system/product
-# TARGET_COPY_OUT_VENDOR := system/vendor
-# TARGET_COPY_OUT_SYSTEM_EXT = system/system_ext
-# TARGET_COPY_OUT_ROOT = system_root/root
-# TARGET_COPY_OUT_PRODUCT := system_root/product
-# TARGET_COPY_OUT_VENDOR := system_root/vendor
-# TARGET_COPY_OUT_SYSTEM_EXT = system_root/system_ext
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -134,7 +125,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
 # Fastbootd Libraries Android 10+
-# TARGET_RECOVERY_DEVICE_MODULES += \
+TARGET_RECOVERY_DEVICE_MODULES += \
           ashmemd_aidl_interface-cpp \
           libashmemd_client
 
