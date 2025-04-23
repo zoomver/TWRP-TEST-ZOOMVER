@@ -112,7 +112,7 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-# PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     bootctrl.$(PRODUCT_PLATFORM) \
     bootctrl.$(PRODUCT_PLATFORM).recovery
 
