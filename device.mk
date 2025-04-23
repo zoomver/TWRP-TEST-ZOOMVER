@@ -18,12 +18,19 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Apex
+OVERRIDE_TARGET_FLATTEN_APEX := true
+PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=true
+
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-OVERRIDE_TARGET_FLATTEN_APEX := true
-PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=true
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
 
 # A/B
 AB_OTA_UPDATER := true
@@ -75,13 +82,6 @@ AB_OTA_PARTITIONS += \
     system \
     system_ext \
     vendor
-
-# A/B
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
 
 # Health Hal
 PRODUCT_PACKAGES += \
