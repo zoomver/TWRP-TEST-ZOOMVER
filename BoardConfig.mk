@@ -12,6 +12,57 @@ ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    cache \
+    dtb \
+    dtbo \
+    fbootlogo \
+    gpsbd \
+    gpsgl \
+    l_deltanv \
+    l_fixnv1 \
+    l_fixnv2 \
+    l_gdsp \
+    l_ldsp \
+    l_modem \
+    logo \
+    l_runtimenv1 \
+    l_runtimenv2 \
+    metadata \
+    miscdata \
+    misc \
+    mmcblk0boot0 \
+    mmcblk0boot1 \
+    odmko \
+    persist \
+    pm_sys \
+    prodnv \
+    sml \
+    socko \
+    super \
+    sysdumpdb \
+    teecfg \
+    trustos \
+    uboot \
+    uboot_log \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vbmeta_product \
+    vbmeta_system_ext \
+    vendor_boot\
+    warmboot \
+    wcnmodem \
+    ztecfg \
+    ztepersist \
+    product \
+    system \
+    system_ext \
+    vendor
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
