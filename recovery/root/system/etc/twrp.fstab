@@ -23,7 +23,7 @@
 /wcnmodem                   emmc     /dev/block/by-name/wcnmodem                  flags=display="wcnmodem";backup=1;flashimg=1;slotselect
 /gnssmodem                  emmc     /dev/block/by-name/gpsgl			                flags=display="gpsgl";backup=1;flashimg=1;slotselect
 /gnssbdmodem              emmc     /dev/block/by-name/gpsbd			              flags=display="gpsbd";backup=1;flashimg=1;slotselect
-/misc                                emmc    /dev/block/by-name/misc                               
+/misc                      emmc    /dev/block/by-name/misc                      flags=display="misc";backup=1;flashimg=1         
 /miscdata                        emmc     /dev/block/by-name/miscdata                      
 /pmsys                             emmc    /dev/block/by-name/pm_sys                    	flags=display="pm_sys";backup=1;flashimg=1;slotselect
 
