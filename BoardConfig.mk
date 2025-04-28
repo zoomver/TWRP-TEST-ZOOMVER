@@ -15,6 +15,19 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_system_ext \
+    vbmeta_product \
+    vbmeta_vendor \
+    dtbo \
+    boot \
+    system \
+    system_ext \
+    vendor \
+    product
+
+# AB_OTA_PARTITIONS += \
 boot_a \
 boot_b \
 dtb_a \
