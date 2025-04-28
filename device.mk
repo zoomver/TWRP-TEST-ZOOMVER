@@ -20,7 +20,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Apex
 # OVERRIDE_TARGET_FLATTEN_APEX := true
-# PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=true
+PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
 # A/B
 ENABLE_VIRTUAL_AB := true
