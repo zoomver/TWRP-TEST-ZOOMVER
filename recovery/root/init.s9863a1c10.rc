@@ -1,8 +1,6 @@
-import /vendor/etc/init/hw/init.${ro.hardware}.usb.rc
-import /vendor/etc/init/hw/init.ram.rc
-import /vendor/etc/init/hw/init.storage.rc
-import /vendor/etc/init/hw/init.cali.rc
-import /vendor/etc/init/hw/init.factorytest.rc
+import /init.${ro.hardware}.usb.rc
+import /init.storage.rc
+import /init.cali.rc
 
 on init
     start watchdogd
