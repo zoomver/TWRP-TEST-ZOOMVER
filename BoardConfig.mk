@@ -86,7 +86,7 @@ AB_OTA_PARTITIONS += \
     system_b \
     system_ext_b \
     vendor_b \
-    cache \
+    cache
 
 # Architecture
 TARGET_ARCH := arm
