@@ -16,8 +16,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot_a \
-    boot_b \   
-    cache \   
+    boot_b \     
     dtb_a \                           
     dtb_b \
     dtbo_a \
@@ -86,7 +85,8 @@ AB_OTA_PARTITIONS += \
     product_b \
     system_b \
     system_ext_b \
-    vendor_b
+    vendor_b \
+    cache \
 
 # Architecture
 TARGET_ARCH := arm
