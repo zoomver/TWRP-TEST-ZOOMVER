@@ -15,19 +15,30 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    boot \
-    cache \
-    dtb \
-    dtbo \
-    fbootlogo \
-    gpsbd \
-    gpsgl \
-    l_deltanv \
-    l_fixnv1 \
-    l_fixnv2 \
-    l_gdsp \
-    l_ldsp \
-    l_modem \
+    boot_a \
+    boot_b \   
+    cache \   
+    dtb_a \                           
+    dtb_b \
+    dtbo_a \
+    dtbo_b \                                        
+    fbootlogo \                                      
+    gpsbd_a \
+    gpsbd_b \                                      
+    gpsgl_a \
+    gpsgl_b \
+    l_deltanv_a \
+    l_deltanv_b \
+    l_fixnv1_a \
+    l_fixnv1_b \
+    l_fixnv2_a \
+    l_fixnv2_b \
+    l_gdsp_a \
+    l_gdsp_b \
+    l_ldsp_a \
+    l_ldsp_b \
+    l_modem_a \
+    l_modem_b \
     logo \
     l_runtimenv1 \
     l_runtimenv2 \
@@ -36,32 +47,46 @@ AB_OTA_PARTITIONS += \
     misc \
     mmcblk0boot0 \
     mmcblk0boot1 \
-    odmko \
+    odmko_a \
+    odmko_b \
     persist \
-    pm_sys \
+    pm_sys_a \
+    pm_sys_b \
     prodnv \
-    sml \
-    socko \
+    sml_a \
+    sml_b \
+    socko_a \
+    socko_b \
     super \
     sysdumpdb \
-    teecfg \
-    trustos \
-    uboot \
+    teecfg_a \
+    teecfg_b \
+    trustos_a \
+    trustos_b \
+    uboot_a \
+    uboot_b \
     uboot_log \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    vbmeta_product \
-    vbmeta_system_ext \
-    vendor_boot\
+    vbmeta_a \
+    vbmeta_b \
+    vbmeta_product_a \
+    vbmeta_product_b \
+    vbmeta_system_a \
+    vbmeta_system_b \
+    vbmeta_system_ext_a \
+    vbmeta_system_ext_b \
+    vbmeta_vendor_a \
+    vbmeta_vendor_b \
+    vendor_boot_a \
+    vendor_boot_b \
     warmboot \
-    wcnmodem \
+    wcnmodem_a \
+    wcnmodem_b \
     ztecfg \
     ztepersist \
-    product \
-    system \
-    system_ext \
-    vendor
+    product_b \
+    system_b \
+    system_ext_b \
+    vendor_b
 
 # Architecture
 TARGET_ARCH := arm
