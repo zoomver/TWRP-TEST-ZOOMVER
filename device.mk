@@ -18,13 +18,14 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# Apex
-# OVERRIDE_TARGET_FLATTEN_APEX := true
+# Virtual A/B
+ENABLE_VIRTUAL_AB := true
+
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
 # A/B
 ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 AB_OTA_PARTITIONS += \
 boot_a \
 boot_b \
