@@ -24,6 +24,7 @@ ENABLE_VIRTUAL_AB := true
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
 # A/B
+AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
 boot_a \
 boot_b \
