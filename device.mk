@@ -20,7 +20,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
-# $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
 # A/B
