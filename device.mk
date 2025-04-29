@@ -99,6 +99,7 @@ system_ext_b \
 vendor_b \
 cache
 
+# A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
