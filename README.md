@@ -35,3 +35,11 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true.
 System_root монтируется без проблем.
 21. Немного переписал файлы .mk
 22. При восстановлении из backup происходит закрытие загрузчика и bootloop. Посоветовали не восстанавливать miscdata, там инфа о загрузчике.
+23. Опробовал метод восстановления из backup без miscdata. Загрузчик не блокируется. Bootloop не выявлен.
+24. TWRP готов примерно на 90%.
+25. Не работает Fastbootd. Запускает режим, но не заходит в него.
+26. Добавил параметры а BoardConfig.mk:
+BOARD_KERNEL_CMDLINE += androidboot.vbmeta.invalidate_on_error=no
+BOARD_KERNEL_CMDLINE += androidboot.veritymode=disabled
+BOARD_KERNEL_CMDLINE += androidboot.dmverity_disabled=1
+Необходима переборка и тест.
