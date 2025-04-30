@@ -37,6 +37,7 @@ BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 buildvariant=user
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.vbmeta.invalidate_on_error=no
 BOARD_KERNEL_CMDLINE += androidboot.veritymode=disabled
+BOARD_KERNEL_CMDLINE += androidboot.dmverity_disabled=1
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x05400000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
