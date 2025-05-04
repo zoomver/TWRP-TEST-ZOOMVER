@@ -43,3 +43,4 @@ BOARD_KERNEL_CMDLINE += androidboot.vbmeta.invalidate_on_error=no
 BOARD_KERNEL_CMDLINE += androidboot.veritymode=disabled
 BOARD_KERNEL_CMDLINE += androidboot.dmverity_disabled=1
 Необходима переборка и тест.
+27. Флаги не дали результат ни на TWRP, ни на систему. Флаги убрал.
