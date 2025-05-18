@@ -5,4 +5,4 @@
 3. Не решён вопрос по установке GSI.img размером более 1gb. Установка super.img проходит успешно.
 4. Добавил флаг:
 TW_INCLUDE_LPTOOLS := true
-
+TW_INCLUDE_LPDUMP := true
