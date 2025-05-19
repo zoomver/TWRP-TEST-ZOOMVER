@@ -6,3 +6,4 @@
 4. Добавил флаг:
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_LPDUMP := true
+TW_INCLUDE_DMCTL := true
