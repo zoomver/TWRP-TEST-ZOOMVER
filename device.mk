@@ -124,6 +124,7 @@ PRODUCT_PACKAGES += \
 
 # The library is created by twrpdtgen, but is considered obsolete.
 # PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+PRODUCT_PACKAGES += \
     bootctrl.sp9863a \
     libgptutils \
     libz \
