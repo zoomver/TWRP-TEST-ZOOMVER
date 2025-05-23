@@ -17,3 +17,8 @@ service watchdogd /system/bin/watchdogd 10 30
     class core
     oneshot
     seclabel u:r:watchdogd:s0
+
+on boot
+    start boot-hal-1-1
+    start health-hal-2-1
+    setprop sys.usb.config adb
