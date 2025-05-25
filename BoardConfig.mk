@@ -172,6 +172,9 @@ TW_INCLUDE_LPDUMP := true
 # Button
 TW_NO_REBOOT_FASTBOOT := true
 
+# CPU Temperature
+TW_NO_CPU_TEMP := true
+
 # Storage
 RECOVERY_SDCARD_ON_DATA := true
 TW_USE_EXTERNAL_STORAGE := true
