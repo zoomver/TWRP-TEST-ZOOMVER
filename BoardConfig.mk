@@ -125,15 +125,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
-# Fastbootd Libraries Android 10+
-TARGET_RECOVERY_DEVICE_MODULES += \
-          ashmemd_aidl_interface-cpp \
-          libashmemd_client
-
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-$(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so \
-$(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so
-
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
@@ -163,17 +154,11 @@ TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 TW_DEVICE_VERSION := ZTE Blade A31 P963F70 by zoomver
 
 # Modules
-# TW_INCLUDE_FASTBOOTD := true
+TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_LPDUMP := true
-
-# Button
-TW_NO_REBOOT_FASTBOOT := true
-
-# CPU Temperature
-TW_NO_CPU_TEMP := true
 
 # Storage
 RECOVERY_SDCARD_ON_DATA := true
