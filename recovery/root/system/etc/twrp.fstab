@@ -17,13 +17,9 @@
 /ltegdsp                          emmc     /dev/block/by-name/l_gdsp			                flags=display="l_gdsp";backup=1;slotselect;flashimg=1
 /ltedeltanv                      emmc     /dev/block/by-name/l_deltanv			            flags=display="l_deltanv";backup=1;slotselect;flashimg=1
 /ltefixnv1                        emmc     /dev/block/by-name/l_fixnv1                      	flags=display="l_fixnv1";backup=1;slotselect;flashimg=1
-/ltefixnv1_image                        emmc     /dev/block/by-name/l_fixnv1                      	flags=display="l_fixnv1 image";backup=1;slotselect;flashimg=1
 /ltefixnv2                        emmc     /dev/block/by-name/l_fixnv2                	     flags=display="l_fixnv2";backup=1;slotselect;flashimg=1
-/ltefixnv2_image                        emmc     /dev/block/by-name/l_fixnv2                	     flags=display="l_fixnv2 image";backup=1;slotselect;flashimg=1
 /lteruntimenv1               emmc     /dev/block/by-name/l_runtimenv1            	flags=display="l_runtimenv1";backup=1;flashimg=1
-/lteruntimenv1_image               emmc     /dev/block/by-name/l_runtimenv1            	flags=display="l_runtimenv1 image";backup=1;flashimg=1
 /lteruntimenv2               emmc     /dev/block/by-name/l_runtimenv2            	flags=display="l_runtimenv2";backup=1;flashimg=1
-/lteruntimenv2_image               emmc     /dev/block/by-name/l_runtimenv2            	flags=display="l_runtimenv2 image";backup=1;flashimg=1
 /wcnmodem                   emmc     /dev/block/by-name/wcnmodem                  flags=display="wcnmodem";backup=1;flashimg=1;slotselect
 /gnssmodem                  emmc     /dev/block/by-name/gpsgl			                flags=display="gpsgl";backup=1;flashimg=1;slotselect
 /gnssbdmodem              emmc     /dev/block/by-name/gpsbd			              flags=display="gpsbd";backup=1;flashimg=1;slotselect
