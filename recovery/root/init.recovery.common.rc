@@ -88,7 +88,7 @@ on init
     chmod 660 /sys/bus/iio/devices/iio:device1/buffer/enable
     chmod 660 /sys/bus/iio/devices/iio:device1/trigger/current_trigger
 
-    export PATH /sbin:/system/bin:/vendor/bin
+    export PATH /sbin:/system/bin:/system/xbin:/system_ext/bin:/vendor/bin:/vendor/xbin:/system_root/system/bin:/system_root/system/xbin
     export SECONDARY_STORAGE /storage/sdcard0
 
     mkdir /storage
