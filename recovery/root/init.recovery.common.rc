@@ -374,8 +374,8 @@ on property:ro.bootmode=factorytest
 
     mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
-    mkdir /system 0755 root root
-    symlink /system_root/system /system
+    # mkdir /system 0755 root root
+    # symlink /system_root/system /system
     trigger post-fs
     trigger post-fs-data
     chown system system /data
