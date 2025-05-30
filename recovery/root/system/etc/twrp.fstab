@@ -79,16 +79,14 @@
 /sysdumpdb                        emmc    /dev/block/by-name/sysdumpdb             flags=display="sysdumpdb";backup=1
 
 # Super and Dynamic partition only
-/product                          ext4       /dev/block/mapper/product_b                  flags=display="product";backup=1;wipeingui
 /system                           ext4       /dev/block/mapper/system_b                         flags=display="system";backup=1;wipeingui
 /system_ext                    ext4       /dev/block/mapper/system_ext_b                 flags=display="system_ext";backup=1;wipeingui
 /vendor                           ext4       /dev/block/mapper/vendor_b                         flags=display="vendor";backup=1;wipeingui
-/product_image                          emmc       /dev/block/mapper/product_b                  flags=display="product image";backup=1;flashimg=1
+/product                          ext4       /dev/block/mapper/product_b                  flags=display="product";backup=1;wipeingui
 /system_image                           emmc       /dev/block/mapper/system_b                         flags=display="system image";backup=1;flashimg=1
 /system_ext_image                    emmc       /dev/block/mapper/system_ext_b                 flags=display="system_ext image";backup=1;flashimg=1
 /vendor_image                           emmc       /dev/block/mapper/vendor_b                         flags=display="vendor image";backup=1;flashimg=1
-
-# Super block partition
+/product_image                          emmc       /dev/block/mapper/product_b                  flags=display="product image";backup=1;flashimg=1
 /super                  emmc     /dev/block/by-name/super                   flags=display="super image";backup=1;flashimg=1
 
 # Folder and block mount (stock info fstab).
