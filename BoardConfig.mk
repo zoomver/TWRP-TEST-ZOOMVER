@@ -98,9 +98,9 @@ BOARD_ZTE_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
 BOARD_ZTE_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Workaround for copying error vendor files to recovery ramdisk
-# TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
-# TARGET_COPY_OUT_SYSTEM_EXT = system_ext
+TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
